@@ -1,0 +1,262 @@
+/* 🌐 Container */
+.results-ai {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+/* 🧊 Common Card Style */
+.card-ai,
+.summary-card-ai {
+  background: rgba(36, 56, 121, 0.18);
+  border-radius: 15px;
+  padding: 1.6rem 1.8rem;
+  border: 1px solid #77bbfa18;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 3px 18px #7beafc1e;
+  color: #06325e;
+  font-size: 0.95rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+  margin-bottom: 2rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.card-ai:hover,
+.summary-card-ai:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 22px #31d3e025;
+}
+
+.card-ai h3,
+.summary-card-ai h2 {
+  color: #07295f;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* 📘 Project Summary */
+.summary-card-ai {
+  background: rgba(39, 41, 91, 0.22);
+  border: 1px solid rgba(75, 140, 212, 0.19);
+  box-shadow: 0 6px 22px #298dc81c;
+  text-align: left;
+  max-width: 75%;
+  margin: 0 auto 2rem;
+  padding: 1.6rem 2rem;
+}
+
+/* 🧩 Grid Layout for Project Info */
+.details-grid-ai {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 220px));
+  justify-content: center;
+  gap: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* Center small cards */
+.details-grid-ai .card-ai {
+  justify-self: center;
+}
+
+/* move first three cards slightly right */
+.details-grid-ai .card-ai:nth-child(-n+3) {
+  transform: translateX(10px);
+}
+
+/* 🧠 AI Language Summary box — atch width with API Endpoints */
+.details-grid-ai .card-ai.wide {
+  grid-column: 1 / -1;
+  max-width: 85%;
+  margin: 0 auto 2rem;
+  padding: 1.8rem;
+  justify-content: center;
+}
+
+/* 🧱 Wide Cards (Endpoints, POM, Suggestions) */
+.card-ai.wide {
+  grid-column: 1 / -1;
+  max-width: 85%;
+  margin: 0 auto 2rem;
+  padding: 1.8rem;
+  justify-content: center;
+}
+
+/* ✨ Scrollable Sections */
+.scroll-box {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #68b6ff33 transparent;
+  padding-right: 0.4rem;
+}
+.scroll-box::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+  background-color: #58b0ff33;
+  border-radius: 8px;
+}
+
+/* 📝 Scrollable AI Language Summary pre */
+.card-ai.wide pre {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 0.6rem;
+}
+.card-ai.wide pre::-webkit-scrollbar {
+  width: 6px;
+}
+.card-ai.wide pre::-webkit-scrollbar-thumb {
+  background-color: #58b0ff33;
+  border-radius: 8px;
+}
+
+/* 📄 Endpoint Items */
+.endpoint-item {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.endpoint-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.endpoint-text {
+  color: #083e72;
+  font-weight: 500;
+  font-family: 'Fira Code', monospace;
+  word-break: break-word;
+  font-size: 0.9rem;
+}
+
+.explain-btn {
+  background: #2b79d6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.explain-btn:hover {
+  background: #195ca3;
+}
+
+/* 🧾 Endpoint Explanation — readable format */
+.endpoint-explanation {
+  margin-top: 0.6rem;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 7px;
+  padding: 0.9rem 1rem;
+  color: #052a4d;
+  font-size: 0.92rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+.endpoint-explanation pre {
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.92rem;
+  color: #052a4d;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 💡 Suggestions */
+.suggestion-ai {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 9px;
+  padding: 1rem;
+  border: 1px solid #30d6ec15;
+  color: #073d77;
+  font-family: 'Fira Mono', monospace;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+/* 📜 Code Blocks */
+pre {
+  font-family: 'Fira Mono', monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 7px;
+  padding: 0.8rem;
+  overflow-x: auto;
+}
+
+/* 🌈 Animations */
+.animate-fadein {
+  animation: fadein 1.1s;
+}
+.animate-slideup {
+  animation: slideup 1.2s both;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🧾 No Data Card */
+.no-data-glass {
+  background: rgba(255,255,255,0.09);
+  border-radius: 17px;
+  padding: 1.9rem;
+  color: #04638c;
+  text-align: center;
+  font-size: 1.17rem;
+  margin-bottom: 2.7rem;
+  opacity: 0.88;
+}
+
+/* 🪶 Spacing Utility */
+.spaced-box {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 📱 Mobile Optimizations */
+@media (max-width: 768px) {
+  .results-ai {
+    padding: 1.2rem;
+  }
+
+  .card-ai.wide {
+    max-width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .summary-card-ai {
+    padding: 1.2rem;
+  }
+
+  .details-grid-ai {
+    grid-template-columns: 1fr;
+  }
+
+  .details-grid-ai .card-ai:nth-child(-n+3) {
+    transform: none;
+  }
+}

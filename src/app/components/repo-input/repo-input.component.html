@@ -1,0 +1,17 @@
+<section class="input-card">
+  <h2>🧩 Analyze Your Repository</h2>
+  <input
+    type="text"
+    [(ngModel)]="gitUrl"
+    placeholder="Enter GitHub repository URL (e.g., https://github.com/user/repo)"
+    class="input-glass"
+  />
+  <button (click)="generateDocs()" [disabled]="loading" class="ai-btn">
+    {{ loading ? '⏳ Generating...' : '🚀 Generate Docs' }}
+  </button>
+  <p *ngIf="error" class="error-glass">{{ error }}</p>
+  <div class="loader-glass" *ngIf="loading">
+    <div class="spinner-glass"></div>
+    <p>Processing repository with AI...</p>
+  </div>
+</section>

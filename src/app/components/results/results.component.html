@@ -1,0 +1,73 @@
+<div *ngIf="data">
+  <!-- 📘 Project Summary -->
+  <div class="summary-card-ai animate-slideup">
+    <h2>📘 Project Summary</h2>
+    <p>{{ data.ai_project_summary }}</p>
+  </div>
+
+  <!-- 🔍 Project Info -->
+  <div class="details-grid-ai">
+    
+    <div class="card-ai animate-fadein spaced-box">
+      <h3>🧩 Project Name</h3>
+      <p>{{ data.project_info.name }}</p>
+    </div>
+
+    <div class="card-ai animate-fadein spaced-box">
+      <h3>🗣 Languages</h3>
+      <p>{{ data.project_info.languages.join(', ') }}</p>
+    </div>
+
+    <div class="card-ai animate-fadein spaced-box">
+      <h3>🏗 Framework</h3>
+      <p>{{ data.project_info.framework }}</p>
+    </div>
+  </div>
+
+<!-- 🔗 API Endpoints -->
+<div class="card-ai wide animate-fadein scroll-box">
+      <h3>AI Language Summary</h3>
+      <pre>{{ data.project_info.ai_language_summary }}</pre>
+</div>
+
+<div class="card-ai wide animate-fadein scroll-box">
+  <h3>🔗 API Endpoints</h3>
+  <ul>
+    <li *ngFor="let endpoint of data.endpoints; let i = index" class="endpoint-item">
+      <div class="endpoint-row">
+        <span class="endpoint-text">{{ endpoint }}</span>
+        <button class="explain-btn" (click)="toggleExplanation(i)">
+          {{ activeExplanation === i ? 'Hide' : 'Explain' }}
+        </button>
+      </div>
+
+      <div *ngIf="activeExplanation === i" class="endpoint-explanation animate-fadein">
+        <pre>{{ data.endpoint_explanations[i]?.endpoint_explanation_text || 'No explanation available' }}</pre>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+  <!-- ⚙️ POM.xml Analysis -->
+  <div class="card-ai wide animate-fadein scroll-box spaced-box">
+    <h3>⚙️ POM.xml Analysis</h3>
+    <pre>{{ data.pom_explanation }}</pre>
+  </div>
+
+  <!-- 💡 AI Code Suggestions
+  <div class="card-ai wide animate-fadein scroll-box spaced-box">
+    <h3>💡 AI Code Suggestions</h3>
+    <div *ngFor="let s of data.suggestions" class="suggestion-ai">
+      <h4>📄 {{ s.file_name }}</h4>
+      <pre>{{ s.suggestion }}</pre>
+    </div>
+  </div> -->
+
+  <!-- 🧾 Additional Notes -->
+  <div class="card-ai wide animate-fadein spaced-box" *ngIf="data.note">
+    <h3>🧾 Additional Notes</h3>
+    <p>{{ data.note }}</p>
+  </div>
+
+</div>
